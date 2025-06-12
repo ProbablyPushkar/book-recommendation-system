@@ -35,7 +35,7 @@ A Flask-based web app that recommends books based on user input using collaborat
 
 Some necessary files are hosted externally due to GitHub file size limitations:
 
-- [books.pkl (70MB)](https://drive.google.com/file/d/16nuuFdnTyfNYZpWT10X96hkAQCk8uwcu/view?usp=sharing)
+- [books.pkl (70MB)](https://drive.google.com/uc?export=download&id=16nuuFdnTyfNYZpWT10X96hkAQCk8uwcu)
 
 
 Install dependencies:
