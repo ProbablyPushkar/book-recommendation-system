@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .navbar {
+            background-color: #1db954 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: bold;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .container {
+            margin-top: 40px;
+        }
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .card-body {
+            text-align: center;
+        }
+        .text-white {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand">My Book Recommender</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/recommend">Recommend</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="text-white" style="font-size:50px">Top 50 Books</h1>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in range(book_name|length) %}
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 mt-4">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ image[i] }}" alt="Book Image">
+                        <div class="card-body">
+                            <p class="text-white font-weight-bold">{{ book_name[i] }}</p>
+                            <h5 class="text-white">{{ author[i] }}</h5>
+                            <p class="text-white">Votes: <strong>{{ votes[i] }}</strong></p>
+                            <p class="text-white">Rating: <strong>{{ rating[i] }}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
